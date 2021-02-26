@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Apps Assignment 6</title>
+    </head>
+ 
+<body>
+
+    
+
+<h2>Hidden things by Pramod Reddy Gonegari</h2>
+
+<form>
+    <label for="Secret">What the Secret Word </label>
+    <input type ="password" id="Secret" name="Secret" min=10 max=50 step=2 value="Secret"> <br>
+
+    <label for="Guess">Enter a Guess </label>
+    <input type ="text" id="Guess" name="Guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="finalResult">This is the Result </p>
+
+<script> 
+
+var correct = 0
+var wrong = 0
+function processGuess (){
+    console.log("Getting form values")
+    secret = document.getElementById("Secret").value
+    guess = document.getElementById("Guess").value
+    
+    out = document.getElementById("finalResult")
+    if(secret == guess){
+        correct = correct + 1
+        alert("Congratulations")
+        out.innerHTML = "Correct Attempts: " +correct
+    } else {
+        wrong += 1;
+        alert("Sorry")
+        out.innerHTML = "Wrong Attempts: " +wrong
+    }
+}
+</script>
+
+<div class="container">
+    <img id="plants" src="geranium.jpg" alt="ERROR" width="200" height="200" onclick="rotateImage()">
+</div>
+
+<script>
+    var currentImage = 0;
+    function rotateImage(){
+        switch(currentImage){
+            case 0: 
+                currentImage+=1;
+                document.getElementById("plants").src = "geranium.jpg"
+                break;
+            case 1:
+                currentImage+=1;
+                document.getElementById("plants").src = "oleander.jpg"
+                break;
+            case 2:
+                currentImage+=1;
+                document.getElementById("plants").src = "nemesia.jpg"
+                break;
+            default:
+                currentImage = 0
+                document.getElementById("plants").src = "geranium.jpg"
+        }
+    }
+</script>
+
+</body>
+</html> 
