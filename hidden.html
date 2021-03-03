@@ -54,20 +54,17 @@ function processGuess (){
     function rotateImage(){
         switch(currentImage){
             case 0: 
-                currentImage+=1;
-                document.getElementById("plants").src = "geranium.jpg"
+                currentImage = 1;
+                document.getElementById("plants").src = "oleander.jpeg"
                 break;
             case 1:
-                currentImage+=1;
-                document.getElementById("plants").src = "oleander.jpg"
-                break;
-            case 2:
-                currentImage+=1;
+                currentImage = 2;
                 document.getElementById("plants").src = "nemesia.jpg"
                 break;
-            default:
-                currentImage = 0
+            case 2:
+                currentImage = 0;
                 document.getElementById("plants").src = "geranium.jpg"
+                break;
         }
     }
 </script>
